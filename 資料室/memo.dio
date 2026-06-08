@@ -1,0 +1,86 @@
+<mxfile host="65bd71144e">
+    <diagram id="JG0ggZ6crgRFEW7FWH1O" name="ページ1">
+        <mxGraphModel dx="1712" dy="1125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="10" value="" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="145" width="210" height="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="LW-EP 連携モニタリング機能" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="390" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="EPCDB0101" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="220" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="LJCDB0101" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="220" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="連携用mdb" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="182.5" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="shape=mxgraph.signs.tech.computer;html=1;pointerEvents=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="140" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="shape=mxgraph.signs.tech.computer;html=1;pointerEvents=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="925" y="140" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="渋谷DC&lt;div&gt;WIN-5SNALMBP319&lt;/div&gt;&lt;div&gt;共有フォルダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="120" width="170" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="690" y="240" as="sourcePoint"/>
+                        <mxPoint x="890" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="220" y="240" as="sourcePoint"/>
+                        <mxPoint x="420" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="連携作成" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="190" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="連携取込" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="190" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" source="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="EJ受注出荷売上&lt;div&gt;PIC中FLG = &#39;1&#39; となる&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="262.5" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" source="28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="LJ受注連携累積V2&lt;div&gt;LJ受注予定&lt;/div&gt;&lt;div&gt;に書き込まれる&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="262.5" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" source="30" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;div&gt;MDBファイルへのアタッチをなるべく防ぐために、状況でふるいにかけてしまう。&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;EJ受注出荷売上がPIC中状況FLGが 1　で&lt;div&gt;LJ受注連携累積V2 に管理番号が存在していなければ連携は作成されたが、LWで未受信となる。&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="297.5" y="374" width="535" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" source="34" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="取得した未受信リストを受信定義に当てた結果からMDB内のテーブルを得られるので&lt;div&gt;MDB内にテーブルがあり、データが１件以上入っているか走査する。&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="293.75" y="510" width="542.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="LM受信取込定義マスタから&lt;div&gt;アタッチするテーブル名を&lt;/div&gt;&lt;div&gt;取得している。&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="122.5" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="あった分だけ画面に表示。&lt;div&gt;通知は、連携残があることだけを通知するトーストを用意する&lt;/div&gt;&lt;div&gt;※細かい内容を表示すると、前回トーストと同様かを保持するのは面倒なのと画面で確認の流れかと思うので&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Noto Sans JP;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNoto%2BSans%2BJP;" parent="1" vertex="1">
+                    <mxGeometry x="247.5" y="620" width="635" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
