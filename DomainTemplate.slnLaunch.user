@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "新しいプロファイル",
+    "Projects": [
+      {
+        "Path": "Ui\\Ui.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

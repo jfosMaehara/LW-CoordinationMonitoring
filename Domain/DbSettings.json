@@ -1,0 +1,6 @@
+{
+    "DbHost"  : "JT22-WIN10\\SQLEX_SUB",
+    "DbName"  : "JSHDB01",
+    "DbUser"  : "sa",
+    "DbPass"  : "jfos"
+}

@@ -1,0 +1,34 @@
+<UserControl
+    x:Class="Ui.Views.Dialogs.DialogProgress"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="350">
+    <Grid Margin="16">
+        <StackPanel
+            Orientation="Vertical"
+            Margin="8">
+
+            <TextBlock
+                Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="0 0 0 8"
+                TextAlignment="Center"
+                HorizontalAlignment="Stretch" />
+
+            <ProgressBar
+                Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Maximum="{Binding Maximum, UpdateSourceTrigger=PropertyChanged}"
+                Height="25" />
+    
+            <TextBlock
+                Text="{Binding Counter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8"
+                TextAlignment="Center"
+                HorizontalAlignment="Stretch" />    
+
+        </StackPanel>
+    </Grid>
+</UserControl>

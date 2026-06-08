@@ -1,0 +1,7 @@
+dotnet add package Microsoft.Extensions.Configuration --version 9.0.0
+dotnet add package Microsoft.Extensions.Configuration.FileExtensions --version 9.0.0
+dotnet add package Microsoft.Extensions.Configuration.Json --version 9.0.0
+dotnet add package Microsoft.Extensions.Configuration.Binder --version 9.0.0
+dotnet add package Microsoft.Data.SqlClient --version 6.0.2
+dotnet add package System.Text.Encoding.CodePages --version 9.0.0 
+dotnet add package ClosedXML --version 0.105.0

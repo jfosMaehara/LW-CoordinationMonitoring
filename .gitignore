@@ -1,0 +1,14 @@
+Domain/bin/*
+Domain/obj/*
+Domain/.vs/*
+Infrastructure/bin/*
+Infrastructure/obj/*
+Infrastructure/.vs/*
+Test/bin/*
+Test/obj/*
+Test/.vs/*
+Ui/bin/*
+Ui/obj/*
+Ui/.vs/*
+.vs/
+~$*
