@@ -12,6 +12,8 @@ public class AppConfigRepositoryImpl() : IConfigRepository
     public string _clientSymbol = string.Empty;
     public string _applicationName = string.Empty;
     public string _applicationTitle = string.Empty;
+    public string _officeCd = string.Empty;
+    public int _interval = 300000;
     
     public void GetConfig()
     {
@@ -35,6 +37,8 @@ public class AppConfigRepositoryImpl() : IConfigRepository
             _clientSymbol = json["ClientSymbol"] ?? "JF";
             _applicationName = json["ApplicationName"] ?? string.Empty;
             _applicationTitle = json["ApplicationTitle"] ?? string.Empty;
+            _officeCd = json["OfficeCD"] ?? string.Empty;
+            _interval = int.Parse(json["ConfirmationIntervalMillisecond"] ?? "300000");
         }
         catch
         {
@@ -49,5 +53,7 @@ public class AppConfigRepositoryImpl() : IConfigRepository
         AppConfig.ClientSymbol = _clientSymbol;
         AppConfig.ApplicationName = _applicationName;
         AppConfig.ApplicationTitle = _applicationTitle;
+        AppConfig.OfficeCD = _officeCd;
+        AppConfig.ConfirmationIntervalMillisecond = _interval;
     }
 }

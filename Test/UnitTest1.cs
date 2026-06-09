@@ -2,6 +2,8 @@ using Domain.Repositories;
 using Domain.StaticValues;
 using Infrastructure.ConfigJson;
 using Infrastructure.Logtext;
+using Infrastructure.Sqlserver.RepositoriesImpl;
+using Infrastructure.Access.RepositoriesImpl;
 
 namespace Test;
 
@@ -26,5 +28,13 @@ public class UnitTest1
     [Fact]
     public void Test1()
     {
+        SetStaticValuesConfigTest();
+        var repo = new OrderImportEntityListRepositoryImpl();
+        var list = repo.GetEntityList();
+        if (OperatingSystem.IsWindows())
+        {
+            var mdbRepo = new CoordinationMDBCheckRepositoryImpl(list);
+            var mdbList = mdbRepo.GetEntityList();
+        }
     }
 }

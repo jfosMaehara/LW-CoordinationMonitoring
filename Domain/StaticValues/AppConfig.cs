@@ -9,4 +9,6 @@ public static class AppConfig
     public static string ClientSymbol { get; set; } = "JF";
     public static string ApplicationName { get; set; } = string.Empty;
     public static string ApplicationTitle { get; set; } = string.Empty;
+    public static string OfficeCD {  get; set; } = string.Empty;
+    public static int ConfirmationIntervalMillisecond { get; set; } = 300000;
 }

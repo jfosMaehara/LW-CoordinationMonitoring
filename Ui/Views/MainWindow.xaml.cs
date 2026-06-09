@@ -8,9 +8,16 @@ namespace Ui.Views;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private NotifyIcon _notifyIcon;
+
     public MainWindow()
     {
         InitializeComponent();
         DataContext = new MainWindowViewModel();
+    }
+
+    private void SetupTrayIcon()
+    {
+
     }
 }

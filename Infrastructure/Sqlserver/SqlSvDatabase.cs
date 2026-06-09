@@ -1,38 +1,60 @@
-using System;
-using System.Data;
 using Microsoft.Data.SqlClient;
-using Domain.Modules;
-using System.Transactions;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Sqlserver;
 
 /// <summary>
-/// Singletonパターンを継承したDatabaseの抽象クラス
+/// SQLServerDBクラス
 /// </summary>
-public abstract class Database : IDisposable
+public class SqlSvDatabase : IDisposable
 {
-    public int CommandTimeoutSpan {get; set;} = 300;
 
-    public SqlConnection Connection {get; set;}
+    private string _connectionString = string.Empty;
+    private string _userId = string.Empty;
+    private string _password = string.Empty;
+    private string _dataSource = string.Empty;
+    private string _dbName = string.Empty;
+
+    public int CommandTimeoutSpan { get; set; } = 300;
+
+    public SqlConnection Connection { get; set; }
 
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public Database()
+    public SqlSvDatabase(string dbHost, string dbName, string userId, string pass)
     {
-        Connection = new ();
+        _dataSource = dbHost;
+        _dbName = dbName;
+        _userId = userId;
+        _password = pass;
+        var builder = new SqlConnectionStringBuilder();
+        builder.DataSource = _dataSource;
+        builder.InitialCatalog = _dbName;
+        builder.UserID = _userId;
+        builder.Password = _password;
+        builder.IntegratedSecurity = false;
+        builder.TrustServerCertificate = true;
+        _connectionString = builder.ConnectionString;
+
+        Connection = new SqlConnection(_connectionString);
     }
 
     /// <summary>
     /// デストラクタ
     /// </summary>
-    ~Database()
+    ~SqlSvDatabase()
     {
         Dispose();
     }
 
     /// <summary>
-    /// ガーベッジ処理
+    /// ガベージ処理
     /// </summary>
     public void Dispose()
     {
@@ -47,11 +69,11 @@ public abstract class Database : IDisposable
     /// <returns></returns>
     public DataTable SelectInDataTable(string sql)
     {
-        using var command = new SqlCommand( sql, Connection );
-        using var adapter = new SqlDataAdapter( command );
+        using var command = new SqlCommand(sql, Connection);
+        using var adapter = new SqlDataAdapter(command);
         command.CommandTimeout = CommandTimeoutSpan;
         var dt = new DataTable();
-        adapter.Fill( dt );
+        adapter.Fill(dt);
         return dt;
     }
 
@@ -64,12 +86,12 @@ public abstract class Database : IDisposable
     /// <returns></returns>
     public DataRow? SelectOneDataRow(string sql)
     {
-        using var command = new SqlCommand( sql, Connection );
-        using var adapter = new SqlDataAdapter( command );
+        using var command = new SqlCommand(sql, Connection);
+        using var adapter = new SqlDataAdapter(command);
         command.CommandTimeout = CommandTimeoutSpan;
         var dt = new DataTable();
-        adapter.Fill( dt );
-        if( dt.Rows.Count == 0 ) return null;
+        adapter.Fill(dt);
+        if (dt.Rows.Count == 0) return null;
         return dt.Rows[0];
     }
 
@@ -79,11 +101,11 @@ public abstract class Database : IDisposable
     /// </summary>
     /// <param name="sql"></param>
     /// <returns></returns>
-    public int? Execute(string sql )
+    public int? Execute(string sql)
     {
-        using var command = new SqlCommand( sql, Connection );
+        using var command = new SqlCommand(sql, Connection);
         command.CommandTimeout = CommandTimeoutSpan;
-        if ( Connection.State == ConnectionState.Closed ) Connection.Open();
+        if (Connection.State == ConnectionState.Closed) Connection.Open();
         return command.ExecuteNonQuery();
     }
 
@@ -96,19 +118,19 @@ public abstract class Database : IDisposable
     /// <returns></returns>
     public int? Execute(string sql, SqlTransaction transaction)
     {
-        using var command = new SqlCommand( sql, Connection, transaction );
+        using var command = new SqlCommand(sql, Connection, transaction);
         command.CommandTimeout = CommandTimeoutSpan;
-        if ( Connection.State == ConnectionState.Closed ) Connection.Open();
+        if (Connection.State == ConnectionState.Closed) Connection.Open();
         return command.ExecuteNonQuery();
     }
-    
+
     /// <summary>
     /// コネクションが閉じていた場合はオープンし、オープンされている状態だった場合は再オープンはしない。(エラー対策)
     /// </summary>
     /// <returns></returns>
     public ConnectionState Open()
     {
-        if( Connection.State ==  ConnectionState.Closed ) Connection.Open();
+        if (Connection.State == ConnectionState.Closed) Connection.Open();
         return Connection.State;
     }
 
@@ -118,7 +140,7 @@ public abstract class Database : IDisposable
     /// <returns></returns>
     public ConnectionState Close()
     {
-        if( Connection.State ==  ConnectionState.Open ) Connection.Close();
+        if (Connection.State == ConnectionState.Open) Connection.Close();
         return Connection.State;
     }
 
@@ -128,8 +150,7 @@ public abstract class Database : IDisposable
     /// <returns></returns>
     public SqlTransaction BeginTransaction()
     {
-        if( Connection.State ==  ConnectionState.Closed ) Connection.Open();
+        if (Connection.State == ConnectionState.Closed) Connection.Open();
         return Connection.BeginTransaction();
     }
-
 }
