@@ -1,5 +1,5 @@
 using System;
-using System.Windows.Controls;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Ui.Views.Dialogs;
 public partial class DialogCircularProgress : UserControl

@@ -8,7 +8,7 @@ namespace Ui.Views;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private NotifyIcon _notifyIcon;
+    //private NotifyIcon _notifyIcon;
 
     public MainWindow()
     {

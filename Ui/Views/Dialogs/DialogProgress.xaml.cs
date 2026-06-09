@@ -1,5 +1,5 @@
 using System;
-using System.Windows.Controls;
+using UserControl = System.Windows.Controls.UserControl;
 using Ui.ViewModels;
 using Ui.ViewModels.Dialogs;
 

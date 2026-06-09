@@ -6,7 +6,8 @@ using Domain.Repositories;
 using Domain.StaticValues;
 using Infrastructure.ConfigJson;
 using Infrastructure.Logtext;
-
+using Application = System.Windows.Application;
+using Ui.Tray;
 
 namespace Ui;
 
@@ -18,12 +19,12 @@ public partial class App : Application
     /// <summary>
     /// APPコンフィグのレポジトリ AppConfig.Jsonからのコンフィグ値を読み込み、書き込みをする。
     /// </summary>
-    public IAppConfigRepository _appConfigRepository = new AppConfigRepositoryImpl();
+    public IConfigRepository _appConfigRepository = new AppConfigRepositoryImpl();
 
     /// <summary>
     /// DBコンフィグのレポジトリ DbConfig.Jsonからのコンフィグ値を読み込み、書き込みをする。
     /// </summary>
-    public IDbConfigRepository _dbConfigRepository = new DbConfigRepositoryImpl();
+    public IConfigRepository _dbConfigRepository = new DbConfigRepositoryImpl();
 
     /// <summary>
     /// Loggerのレポジトリ パスは AppConfigからの取り出し。 
@@ -62,10 +63,16 @@ public partial class App : Application
         else
         {
             //Applicatioin起動処理//
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ja-JP");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
-            var window = new Views.MainWindow();
-            window.Show();
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo("ja-JP");
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
+            //var window = new Views.MainWindow();
+            //window.Show();
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            //フォームを表示しないで常駐開始
+            System.Windows.Forms.Application.Run(new TrayApplicationContext());
+            //App_Exit(null, null);
+            Shutdown();
         }
     }
 
