@@ -33,10 +33,13 @@ public class CoordinationMDBCheckRepositoryImpl
                     var dt = db.SelectInDataTable(GetQuery(checkList[i].CoordinationTBLName));
                     var status = dt.Rows.Count > 0 ? CoordinationStatus.NotCoordinated : CoordinationStatus.NoData;
                     checkList[i].Status = status;
+                    checkList[i].StatusMessage = status == CoordinationStatus.NotCoordinated ? "未連携" : "連携データなし";
                 }
                 catch (OleDbException e)
                 {
-                    checkList[i].Status = CoordinationStatus.NoData;
+                    checkList[i].Status = CoordinationStatus.NoTable;
+                    checkList[i].StatusMessage = "連携データテーブルなし";
+                    checkList[i].ExceptionMessage = e.Message;
                 }
             }
         }

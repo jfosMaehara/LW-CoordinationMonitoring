@@ -70,10 +70,32 @@ public class OrderImportEntity
 
     
     private CoordinationStatus _Status;
-
+    /// <summary>
+    /// ステータスコード（enum）
+    /// </summary>
     public CoordinationStatus Status
     {
         get => _Status;
         set => _Status = value;
+    }
+
+    private string _StatusMessage;
+    /// <summary>
+    /// ステータスメッセージ
+    /// </summary>
+    public string StatusMessage
+    {
+        get => _StatusMessage;
+        set => _StatusMessage = value;
+    }
+
+    private string _ExceptionMessage;
+    /// <summary>
+    /// Exceptionメッセージ
+    /// </summary>
+    public string ExceptionMessage
+    {
+        get => _ExceptionMessage;
+        set => _ExceptionMessage = value;
     }
 }
