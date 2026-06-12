@@ -1,14 +1,15 @@
 ﻿using Domain.Entities;
+using Domain.Enums;
 using Domain.Repositories;
 using Domain.StaticValues;
-using Domain.Enums;
+using Infrastructure.Logtext;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.OleDb;
 
 namespace Infrastructure.Access.RepositoriesImpl;
 
@@ -22,12 +23,12 @@ public class CoordinationMDBCheckRepositoryImpl
     {
         var list = new List<OrderImportEntity>();
         if (checkList == null || checkList.Count == 0) return list;
-        var mdbPath = checkList[0].CoordinationMDBFullPath;
-        using var db = new AccessDatabase(mdbPath, DbConfig.AccessProvider);
         try
         {
             for (var i = 0; i < checkList.Count; i++)
             {
+                var mdbPath = checkList[0].CoordinationMDBFullPath;
+                using var db = new AccessDatabase(mdbPath, DbConfig.AccessProvider);
                 try
                 {
                     var dt = db.SelectInDataTable(GetQuery(checkList[i].CoordinationTBLName));
@@ -40,6 +41,8 @@ public class CoordinationMDBCheckRepositoryImpl
                     checkList[i].Status = CoordinationStatus.NoTable;
                     checkList[i].StatusMessage = "連携データテーブルなし";
                     checkList[i].ExceptionMessage = e.Message;
+                    db.Close();
+                    db.Dispose();
                 }
             }
         }

@@ -1,13 +1,11 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Globalization;
-using System.Windows;
-using Domain.Repositories;
+﻿using Domain.Repositories;
 using Domain.StaticValues;
 using Infrastructure.ConfigJson;
 using Infrastructure.Logtext;
+using System.Globalization;
+using System.Reflection;
+using System.Windows;
 using Application = System.Windows.Application;
-using Ui.Tray;
 
 namespace Ui;
 
@@ -48,6 +46,8 @@ public partial class App : Application
 
         // Logger
         Logger = new LoggerRepositoryImpl(AppConfig.LogPath);
+        Logger.LogTrash();
+        Logger.LogWrite(ILoggerRepository.LogLevel.Start, "モニタリング開始");
     }
     
     protected override void OnStartup(StartupEventArgs e)
@@ -63,17 +63,11 @@ public partial class App : Application
         else
         {
             //Applicatioin起動処理//
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo("ja-JP");
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
-            //var window = new Views.MainWindow();
-            //window.Show();
-            System.Windows.Forms.Application.EnableVisualStyles();
-            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            //フォームを表示しないで常駐開始
-            System.Windows.Forms.Application.Run(new TrayApplicationContext());
-            //App_Exit(null, null);
-            Shutdown();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("ja-JP");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
+            var window = new Views.CoordinationMonitoringListView();
         }
+        
     }
 
     private void App_Exit(object sender, ExitEventArgs e)
@@ -83,5 +77,6 @@ public partial class App : Application
             Mutex.ReleaseMutex();
             Mutex.Close();
         }
+        Logger.LogWrite(ILoggerRepository.LogLevel.End, "モニタリング終了");
     }
 }

@@ -41,6 +41,6 @@ public class CoordinationMonitoringListViewModel : ViewModelBase
     public CoordinationMonitoringListViewModel()
     {
         _checkingOrderImportListCommand = new(this);
-        CheckingOrderImportListCommand.Execute(null);
+        //CheckingOrderImportListCommand.Execute(null);
     }
 }

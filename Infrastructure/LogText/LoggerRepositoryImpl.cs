@@ -58,15 +58,19 @@ public class LoggerRepositoryImpl(
         
         foreach( var file in files )
         {
-            var fileInfo = new FileInfo(file);
-            var name = fileInfo.Name.Replace(  fileInfo.Extension, "");
-            var sepalate =  name.Split("-");
-            var year  = int.Parse( sepalate[0] );
-            var month = int.Parse( sepalate[1] );
-            var day   = int.Parse( sepalate[2] );
-            var date  = new DateTime( year, month, day );
-            var except = (today - date).Days;
-            if( except > LogHoldingDay ) File.Delete( fileInfo.FullName );
+            try
+            {
+                var fileInfo = new FileInfo(file);
+                var name = fileInfo.Name.Replace(fileInfo.Extension, "");
+                var sepalate = name.Split("-");
+                var year = int.Parse(sepalate[0]);
+                var month = int.Parse(sepalate[1]);
+                var day = int.Parse(sepalate[2]);
+                var date = new DateTime(year, month, day);
+                var except = (today - date).Days;
+                if (except > LogHoldingDay) File.Delete(fileInfo.FullName);
+            }
+            catch { }
         }
     }
 }

@@ -23,12 +23,17 @@ public class OrderImportEntityListRepositoryImpl() : IEntityListRepository<Order
     public List<OrderImportEntity> GetEntityList()
     {
         using var db = new SqlSvDatabase(DbConfig.SqlSvHost, DbConfig.SqlSvName, DbConfig.SqlSvUser, DbConfig.SqlSvPass);
-        _logger.LogWrite(ILoggerRepository.LogLevel.Info, db.Connection.ConnectionString);
         var query = GetQuery();
-        _logger.LogWrite(ILoggerRepository.LogLevel.Info, query.ToString());
         using var dt = db.SelectInDataTable(query);
         var list = new List<OrderImportEntity>();
         foreach (DataRow row in dt.Rows) list.Add(Mapping(row));
+        _logger.LogWrite(ILoggerRepository.LogLevel.Info, db.Connection.ConnectionString);
+        _logger.LogWrite(ILoggerRepository.LogLevel.Info, query.ToString());
+        _logger.LogWrite(ILoggerRepository.LogLevel.Info, $@"結果:{list.Count}");
+        if (list.Count > 0 )
+        {
+            _logger.LogWrite(ILoggerRepository.LogLevel.Info, $@"連携MDB_FULL_PATH:{list[0].CoordinationMDBFullPath}");
+        }
         return list;
     }
 
